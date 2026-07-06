@@ -1,133 +1,114 @@
 # Golang Masterclass
 
-This repository is where I document my journey of learning Go by building real projects.
+This is where I actually learn Go — not by taking notes I'll never open again, but by building things, breaking them, and fixing them until they make sense.
 
-Instead of keeping notes that I'll probably never revisit, I wanted one place where I could experiment, make mistakes, fix them, and gradually build a collection of projects that showcase different parts of the language.
+I build projects as I learn, extending many of them beyond the original idea to explore how Go works in practice. Whenever a concept clicks, I try to push it a little further, turn it into something practical, and write about the projects that teach me the most.
+This repository is the running record of that — my public learning journal.
 
-Most folders focus on a single concept or feature, while some combine multiple ideas into small practical projects.
-
-If you're learning Go too, I hope you find something useful here.
-
----
-
-## What You'll Find
-
-Each folder covers a different topic as I progress through Go.
-
-Current topics include:
-
-### Concurrency
-
-Projects exploring Go's concurrency model using:
-
-- Goroutines
-- WaitGroups
-- Channels
-- Buffered Channels
-- Semaphore Pattern
-- Context Cancellation
-- Synchronization
-
-Projects:
-
-- Concurrent File Downloader
-- Ping-Pong with Context Cancellation
-- Goroutine Basics
-
-More topics will be added as I continue learning.
+If you're learning Go too, I hope something in here saves you an hour of confusion I had to sit through myself.
 
 ---
 
-## Repository Structure
+## How This Is Organized
+
+Each top-level folder is a concept area. Inside, you'll usually find a small standalone Go program exploring one idea, and sometimes a full project where a few ideas come together.
 
 ```text
 Golang-Masterclass
 │
-├── goroutines/
-│   ├── fileDownloader/
-│   ├── ...
+├── goroutines/                     # Concurrency: the core of this repo so far
+│   ├── main.go                     # Ping-pong with context cancellation
+│   ├── Mutex/                      # Thread-safe bank account with sync.Mutex
+│   └── Project - FileDownloader/   # Concurrent file downloader (featured project)
 │
-├── README.md
+├── Practise/                       # Early warm-up snippets, kept as a record of day one
+│
+└── README.md
 ```
 
-The structure will continue to grow as I cover more Go concepts.
-
+The repository grows naturally as I explore new concepts and build more projects.
 ---
 
-## Why This Repository?
+## What's Inside So Far
 
-I learn best by building.
+### Concurrency
 
-Rather than writing dozens of isolated examples, I prefer creating projects that naturally introduce new concepts.
-
-Every project teaches me something different—whether it's concurrency, networking, file handling, or backend development.
-
-This repository is essentially my public learning journal.
-
----
-
-## Featured Project
-
-### Concurrent File Downloader
-
-A small project that downloads multiple files concurrently while exploring some of Go's most useful concurrency primitives.
-
-Concepts covered:
+Concepts explored:
 
 - Goroutines
 - WaitGroups
 - Channels
-- Semaphore Pattern
-- Concurrent HTTP Requests
-- Download Metrics
+- Mutexes
+- Context Cancellation
+- Buffered Channels
 
-I also wrote a detailed article explaining how the project works:
+Projects:
 
-📖 I also wrote a detailed walkthrough explaining how the project works on Medium:
+- Ping-Pong with Context Cancellation
+- Mutex-Protected Bank Account
+- Concurrent File Downloader
 
-**[Building a Concurrent File Downloader in Go: A Practical Guide to Goroutines](https://medium.com/@vexstack/building-a-concurrent-file-downloader-in-go-a-practical-guide-to-goroutines-4071dd01f946)**
+
+### Early Practice (`Practise/`)
+
+Some of my very first Go snippets from before I had any real footing in the language. I'm keeping these instead of deleting them because they're an honest starting point — it's easier to see how far something has come when the beginning is still there.
+
+More folders will show up as I move further into the course and start branching into things like networking and backend basics.
 
 ---
 
+## Featured Project: Concurrent File Downloader
+
+The project I'm proudest of so far. It downloads multiple files at once instead of one-by-one, and along the way covers:
+
+- Goroutines and WaitGroups for running downloads in parallel
+- A buffered-channel semaphore to cap how many downloads run concurrently
+- Channels for collecting results (size, duration, errors) from each worker
+- A basic sequential-vs-concurrent comparison to see the actual speedup
+
+I wrote a full walkthrough of how it's built, including a code review section where I go back and point out real bugs in my own implementation rather than pretending the first version was clean:
+
+📖 **[Building a Concurrent File Downloader in Go: A Practical Guide to Goroutines](https://medium.com/@vexstack/building-a-concurrent-file-downloader-in-go-a-practical-guide-to-goroutines-4071dd01f946)**
+
 ## Running a Project
 
-Clone the repository:
+Clone the repo:
 
 ```bash
 git clone https://github.com/Vex-15/Golang-Masterclass.git
-```
-
-Move into the repository:
-
-```bash
 cd Golang-Masterclass
 ```
 
-Run any project:
+Each folder is self-contained, so just `cd` into whichever one you want and run it:
 
 ```bash
 cd goroutines
 go run .
 ```
 
+For nested projects (like the file downloader), go one level deeper:
+
+```bash
+cd "goroutines/Project - FileDownloader"
+go run .
+```
+
 ---
 
-## Contributing
+## Why I'm Doing This in the Open
 
-This is primarily a personal learning repository, but if you notice something that can be improved, feel free to open an issue or submit a pull request.
+I could keep this all local and never show anyone the messy parts. But building in public keeps me honest about what I actually understand versus what I've just copied from a tutorial, and it means the mistakes are as visible as the wins — which is usually the more useful part for anyone else learning the same thing.
 
-I'm always open to learning better ways of writing Go.
+If you spot something I got wrong, or a cleaner way to do what I did, I'd genuinely like to hear it. Open an issue or a PR.
 
 ---
 
 ## Connect
 
-GitHub: https://github.com/Vex-15
-
-X: https://x.com/vexstack
-
-Medium: https://medium.com/@vexstack
+- GitHub: [github.com/Vex-15](https://github.com/Vex-15)
+- Medium: [medium.com/@vexstack](https://medium.com/@vexstack)
+- X: [x.com/vexstack](https://x.com/vexstack)
 
 ---
 
-If you find this repository useful, consider giving it a ⭐.
+If any of this helped you get unstuck on something, a ⭐ on the repo is always appreciated.
