@@ -3,7 +3,7 @@
 This is where I actually learn Go — not by taking notes I'll never open again, but by building things, breaking them, and fixing them until they make sense.
 
 I build projects as I learn, extending many of them beyond the original idea to explore how Go works in practice. Whenever a concept clicks, I try to push it a little further, turn it into something practical, and write about the projects that teach me the most.
-This repository is the running record of that — my public learning journal.
+This repository is the running record of that—a public learning journal and practical reference for anyone learning Go alongside me.
 
 If you're learning Go too, I hope something in here saves you an hour of confusion I had to sit through myself.
 
@@ -27,6 +27,7 @@ Golang-Masterclass
 ```
 
 The repository grows naturally as I explore new concepts and build more projects.
+
 ---
 
 ## What's Inside So Far
@@ -53,7 +54,7 @@ Projects:
 
 Some of my very first Go snippets from before I had any real footing in the language. I'm keeping these instead of deleting them because they're an honest starting point — it's easier to see how far something has come when the beginning is still there.
 
-More folders will show up as I move further into the course and start branching into things like networking and backend basics.
+More folders will be added as I continue exploring new areas of Go, from networking and data handling to backend development.
 
 ---
 
@@ -66,7 +67,7 @@ The project I'm proudest of so far. It downloads multiple files at once instead 
 - Channels for collecting results (size, duration, errors) from each worker
 - A basic sequential-vs-concurrent comparison to see the actual speedup
 
-I wrote a full walkthrough of how it's built, including a code review section where I go back and point out real bugs in my own implementation rather than pretending the first version was clean:
+I also wrote a detailed walkthrough covering how it works, the design decisions behind it, and a review of the mistakes I made while building it.
 
 📖 **[Building a Concurrent File Downloader in Go: A Practical Guide to Goroutines](https://medium.com/@vexstack/building-a-concurrent-file-downloader-in-go-a-practical-guide-to-goroutines-4071dd01f946)**
 
@@ -79,14 +80,16 @@ git clone https://github.com/Vex-15/Golang-Masterclass.git
 cd Golang-Masterclass
 ```
 
-Each folder is self-contained, so just `cd` into whichever one you want and run it:
+Each project is self-contained.
+
+Navigate to the project you want to run:
 
 ```bash
-cd goroutines
+cd <project-directory>
 go run .
 ```
 
-For nested projects (like the file downloader), go one level deeper:
+For example:
 
 ```bash
 cd "goroutines/Project - FileDownloader"
